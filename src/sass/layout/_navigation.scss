@@ -3,18 +3,41 @@
   display: flex;
   flex-direction: column;
 }
-
 .nav {
   display: flex;
   align-items: center;
 
+  // ************** USER
   &__user {
-    flex-basis: 33, 33%;
     flex: 1;
+
+    &--menu {
+      position: relative;
+      display: flex;
+      align-items: center;
+      float: left;
+      transition: all 0.2s;
+
+      p {
+        margin-left: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+
+    &--menu:hover {
+      p {
+        opacity: 0.8;
+      }
+    }
+
+    &--menu:hover .user__dropdown {
+      display: flex;
+    }
   }
 
+  // ************** PHONE
   &__phone {
-    flex-basis: 33, 33%;
     flex: 1;
     display: flex;
 
@@ -33,7 +56,7 @@
   &__logo {
     text-align: center;
     justify-self: center;
-    flex-basis: 66, 66%;
+
     flex: 2;
 
     img {
@@ -42,15 +65,39 @@
     }
   }
 
+  // ************** CART
   &__cart {
-    flex-basis: 33, 33%;
     flex: 1;
 
-    display: flex;
-    justify-content: flex-end;
+    &--box {
+      float: right;
+      display: flex;
+      justify-content: flex-end;
+
+      div {
+        margin-right: 1.5rem;
+      }
+
+      div p:nth-child(1) {
+        font-weight: 800;
+        letter-spacing: 0.1rem;
+      }
+
+      div p:nth-child(2) {
+        font-weight: 100;
+        opacity: 0.7;
+        transition: all 0.2s;
+      }
+    }
+
+    &--box:hover div p:nth-child(2) {
+      opacity: 1;
+      color: $color-secondary;
+    }
   }
 }
 
+// ************** TABS
 .tabs {
   margin-top: 2rem;
   align-self: center;
@@ -70,6 +117,7 @@
     padding-bottom: 0.5rem;
     position: relative;
     transition: all 0.2s;
+    cursor: pointer;
   }
 
   a:hover {
@@ -103,12 +151,47 @@
   }
 }
 
+// ************* ACCOUNT DROPDOWN
+
+.user__dropdown {
+  display: none;
+  width: 14rem;
+  flex-direction: column;
+  position: absolute;
+  left: 6rem;
+  top: 5rem;
+
+  li {
+    padding: 0.8rem 1rem;
+  }
+
+  li:hover {
+    background-color: $color-secondary;
+    color: $color-primary;
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    p {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+// *********** ICONS
 .phone-icon {
   font-size: 5rem !important;
 }
 
 .cart-icon {
   font-size: 5rem !important;
+  color: $color-white !important;
 }
 
 .badge-icon {
@@ -119,4 +202,9 @@
   background-color: $color-secondary;
   color: $color-primary;
   font-size: 1rem !important;
+}
+
+.account-icon {
+  font-size: 5rem !important;
+  color: $color-white !important;
 }
