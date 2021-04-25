@@ -1,0 +1,122 @@
+.navigation {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__user {
+    flex-basis: 33, 33%;
+    flex: 1;
+  }
+
+  &__phone {
+    flex-basis: 33, 33%;
+    flex: 1;
+    display: flex;
+
+    div p:nth-child(1) {
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+    }
+
+    div p:nth-child(2) {
+      font-size: 1.3rem;
+      opacity: 0.6;
+      font-weight: 200;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    justify-self: center;
+    flex-basis: 66, 66%;
+    flex: 2;
+
+    img {
+      max-width: 25rem;
+      width: 100%;
+    }
+  }
+
+  &__cart {
+    flex-basis: 33, 33%;
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.tabs {
+  margin-top: 2rem;
+  align-self: center;
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 2rem;
+  }
+
+  a {
+    text-transform: uppercase;
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  a:hover {
+    color: $color-secondary;
+  }
+
+  a.btn {
+    display: flex;
+    justify-content: center;
+    &:after {
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      content: "";
+      width: 1rem;
+      height: 0.1rem;
+    }
+  }
+
+  a.active {
+    display: flex;
+    justify-content: center;
+    &:after {
+      background-color: $color-secondary;
+      position: absolute;
+      bottom: 0;
+      content: "";
+      width: 1rem;
+      height: 0.1rem;
+    }
+  }
+}
+
+.phone-icon {
+  font-size: 5rem !important;
+}
+
+.cart-icon {
+  font-size: 5rem !important;
+}
+
+.badge-icon {
+  color: $color-secondary;
+}
+
+.MuiBadge-badge {
+  background-color: $color-secondary;
+  color: $color-primary;
+  font-size: 1rem !important;
+}
