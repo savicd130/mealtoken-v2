@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
 import { Badge } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -9,9 +9,11 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
+import Login from "../components/Login";
 
-export default function Navbar() {
-  const login = true;
+export default function Navbar(props) {
+  const [activeNavClass, setActiveNavClass] = useState("/");
+  const [login, setLogin] = useState(true);
 
   return (
     <>
@@ -19,7 +21,7 @@ export default function Navbar() {
         <div className="nav">
           {login ? (
             <div className="nav__user">
-              <Link className="nav__user--menu" to="/profile">
+              <div className="nav__user--menu">
                 <div className="account-menu">
                   <AccountCircleIcon className="account-icon" />
                 </div>
@@ -37,12 +39,12 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="#">
+                    <Link onClick={() => setLogin(false)} to="#">
                       <ExitToAppIcon fontSize="large" /> <p>Sign Out</p>
                     </Link>
                   </li>
                 </ul>
-              </Link>
+              </div>
             </div>
           ) : (
             <div className="nav__phone">
@@ -76,26 +78,47 @@ export default function Navbar() {
         <div className="tabs">
           <ul>
             <li>
-              <Link to="/" className="active">
+              <Link
+                onClick={() => setActiveNavClass("/")}
+                to="/"
+                className={activeNavClass === "/" ? "active" : "btn"}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/menu" className="btn">
+              <Link
+                onClick={() => setActiveNavClass("/menu")}
+                to="/menu"
+                className={activeNavClass === "/menu" ? "active" : "btn"}
+              >
                 Menu
               </Link>
             </li>
             <li>
-              <Link to="contact" className="btn">
+              <Link
+                onClick={() => setActiveNavClass("/contact")}
+                to="contact"
+                className={activeNavClass === "/contact" ? "active" : "btn"}
+              >
                 Contact
               </Link>
             </li>
             <li>
-              <Link to="about" className="btn">
+              <Link
+                onClick={() => setActiveNavClass("/about")}
+                to="about"
+                className={activeNavClass === "/about" ? "active" : "btn"}
+              >
                 About
               </Link>
             </li>
           </ul>
+          {!login && (
+            <div className="tabs__signin">
+              <Login />
+            </div>
+          )}
         </div>
       </nav>
     </>
