@@ -37,7 +37,7 @@ export default function SimpleSlider() {
     prevArrow: <PrevArrow />,
   };
   return (
-    <div>
+    <div className="slider-grid">
       <Slider className="slider" {...settings}>
         <div>
           <div className="slider-content">

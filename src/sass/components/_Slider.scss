@@ -1,4 +1,10 @@
+.slider-grid {
+  grid-column: full-start / full-end;
+}
+
 .slider {
+  grid-column: full-start / full-end;
+  display: grid;
   padding: 1rem;
   grid-column: center-start / full-end;
   background-image: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)),

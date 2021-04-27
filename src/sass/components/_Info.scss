@@ -1,11 +1,11 @@
-.home {
-  display: grid;
+.info {
+  grid-column: full-start / full-end;
+  background-image: url("../../images/back_2.png");
+  color: $color-primary;
+  padding: 8rem 0;
 }
 
 .features {
-  color: $color-primary;
-  padding: 10rem 12rem;
-  background-image: url("../../images/back_2.png");
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
