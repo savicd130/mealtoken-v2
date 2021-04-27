@@ -40,7 +40,7 @@ a:focus {
 
 .container {
   display: grid;
-  grid-template-rows: 25rem calc(100vh - 25rem);
+  grid-template-rows: 25rem;
   grid-template-columns:
     [full-start] minmax(6rem, 1fr)
     [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])

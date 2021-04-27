@@ -1,4 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
+import Footer from "./layout/Footer";
 import Navbar from "./layout/Navbar";
 import "./sass/main.scss";
 import HomeScreen from "./screen/HomeScreen";
@@ -15,7 +16,9 @@ function App() {
           <Route path="/" component={HomeScreen} exact />
           <Route path="/menu" component={MenuScreen} exact />
         </main>
-        <footer className="footer"></footer>
+        <footer className="footer">
+          <Footer />
+        </footer>
       </div>
     </BrowserRouter>
   );
