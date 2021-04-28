@@ -60,7 +60,7 @@ export default function Navbar(props) {
             <img src="./images/logoMeal.png" alt="logo" />
           </div>
           <div className="nav__cart">
-            <Link to="/cart" className="nav__cart--box">
+            <Link to="/shop" className="nav__cart--box">
               <div>
                 <p>$0.00</p>
                 <p>0 items</p>
@@ -97,20 +97,29 @@ export default function Navbar(props) {
             </li>
             <li>
               <Link
-                onClick={() => setActiveNavClass("/contact")}
-                to="contact"
-                className={activeNavClass === "/contact" ? "active" : "btn"}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
                 onClick={() => setActiveNavClass("/about")}
                 to="about"
                 className={activeNavClass === "/about" ? "active" : "btn"}
               >
                 About
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setActiveNavClass("/shop")}
+                to="shop"
+                className={activeNavClass === "/shop" ? "active" : "btn"}
+              >
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={() => setActiveNavClass("/contact")}
+                to="contact"
+                className={activeNavClass === "/contact" ? "active" : "btn"}
+              >
+                Contact
               </Link>
             </li>
           </ul>
