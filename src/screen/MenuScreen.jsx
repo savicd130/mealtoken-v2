@@ -2,15 +2,14 @@ import React from "react";
 import Info from "../components/Info";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Title from "../components/Title";
 
 export default function MenuScreen(props) {
   console.log(props.location);
 
   return (
     <>
-      <div className="menu-title">
-        <h6>DISCOVER OUR MENU</h6>
-      </div>
+      <Title title="Discover our menu" />
 
       <div className="menu">
         <div className="menu__nav">
