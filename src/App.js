@@ -5,6 +5,7 @@ import "./sass/main.scss";
 import AboutScreen from "./screen/AboutScreen";
 import HomeScreen from "./screen/HomeScreen";
 import MenuScreen from "./screen/MenuScreen";
+import ShopScreen from "./screen/ShopScreen";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         </header>
         <main className="main">
           <Route path="/" component={HomeScreen} exact />
-          <Route path="/menu" component={MenuScreen} exact />
-          <Route path="/about" component={AboutScreen} exact />
+          <Route path="/menu" component={MenuScreen} />
+          <Route path="/about" component={AboutScreen} />
+          <Route path="/shop" component={ShopScreen} />
         </main>
         <footer className="footer">
           <Footer />

@@ -1,0 +1,87 @@
+.shop {
+  grid-column: center-start / center-end;
+  margin: 8rem 0;
+  display: flex;
+  color: #dce4c7;
+
+  &__cart {
+    flex: 2 1;
+
+    table {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2rem;
+    }
+
+    thead {
+      background-color: #252c30;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      justify-content: center;
+      align-items: center;
+    }
+
+    th {
+      padding: 0.9rem 1.2rem;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+    td {
+      justify-self: center;
+    }
+  }
+  &__totals {
+    background-color: turquoise;
+    flex: 1 1;
+  }
+}
+
+.cart-item {
+  padding: 3rem 0;
+  border-bottom: 0.2rem solid $color-white;
+}
+
+.cart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.cart-close-icon {
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem !important;
+    cursor: pointer;
+  }
+}
+
+.cart-cancel-icon {
+  color: #dce4c7 !important;
+  transition: all 0.2s !important;
+}
+
+.cart-close-icon button:hover .cart-cancel-icon {
+  color: $color-secondary !important;
+}
+
+.cart-img {
+  img {
+    max-width: 8rem;
+    width: 100%;
+  }
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+
+  & > * {
+    padding: 0.3rem;
+  }
+}
