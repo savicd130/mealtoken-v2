@@ -39,7 +39,7 @@ export default function SimpleSlider() {
   return (
     <div className="slider-grid">
       <Slider className="slider" {...settings}>
-        <div>
+        <div style={{ height: "100%" }}>
           <div className="slider-content">
             <div className="slider-content--left">
               <h1>Meal Token Pizza</h1>
